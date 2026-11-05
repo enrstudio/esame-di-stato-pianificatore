@@ -1,0 +1,37 @@
+name: Scadenze
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+permissions:
+  issues: write
+jobs:
+  avvisa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Avvisa sulle issue in scadenza
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PY'
+          import datetime,json,os,re,urllib.request as U
+          T,R=os.environ['GH_TOKEN'],os.environ['REPO'];H={'Authorization':'Bearer '+T,'Accept':'application/vnd.github+json'}
+          def api(p,d=None):
+              q=U.Request('https://api.github.com/repos/'+R+p,data=json.dumps(d).encode() if d else None,headers=H,method='POST' if d else 'GET')
+              return json.load(U.urlopen(q))
+          oggi=datetime.date.today()
+          for i in api('/issues?state=open&per_page=100'):
+              if 'pull_request' in i:continue
+              m=re.search(r'Scadenza: (\d{4}-\d{2}-\d{2})',i.get('body') or '')
+              if not m:continue
+              g=(datetime.date.fromisoformat(m.group(1))-oggi).days
+              if g==1:t='scade domani'
+              elif g==0:t='scade oggi'
+              elif g<0 and -g%7==1:t=f'è scaduta da {-g} giorni'
+              else:continue
+              s=oggi.isoformat()
+              if any(s in c['body'] for c in api(f"/issues/{i['number']}/comments?per_page=100")):continue
+              api(f"/issues/{i['number']}/comments",{'body':f"@enrstudio questa issue {t} ({m.group(1)}). Avviso automatico del {s}."})
+              print(i['number'],t)
+          PY
