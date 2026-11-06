@@ -92,7 +92,7 @@ function riferimenti(){
  function riga(x){return {perche:x.perche||x.nota||x.testo,fonti:x.fonti,stato:x.stato}}
  C.innerHTML='<h2>Differenze fra gli iter</h2><div class="nv-cf">'+Object.keys(M.ITER).map(function(k){var I=M.ITER[k];return '<div><h3>'+esc(I.nome)+' <small>'+esc(I.breve)+'</small></h3><dl class="nv-dd"><dt>Osservazioni</dt><dd>'+esc(I.osservazioni)+'</dd><dt>Efficacia</dt><dd>'+esc(I.efficacia)+'</dd></dl>'+fonti(I.fonti)+'</div>'}).join('')+'</div>'+
   '<p>I ruoli seguono <a href="D3.html#chi-fa-cosa-la-mappa-dei-ruoli">D3, Chi fa cosa</a> e <a href="D3.html#chi-interviene-in-ogni-fase">Chi interviene in ogni fase</a>. Per la VAS vedi <a href="D6.html#fasi-art-21">D6, Fasi</a>.</p>'+
-  '<h2>Tutte le regole</h2><p>'+M.REGOLE.length+' regole: '+ok.length+' riscontrate sul testo in cartella, '+no.length+' da riscontrare.</p>'+
+  '<h2>Tutte le regole</h2><p>'+M.REGOLE.length+' regole: '+ok.length+' riscontrate sul testo vigente, con una seconda lettura indipendente; '+no.length+' da riscontrare. I testi non in cartella sono indicati sotto, in «Testi usati».</p>'+
   '<details class="nv-de"><summary>Da riscontrare ('+no.length+')</summary><ul>'+no.map(riga).map(rigaR).join('')+'</ul></details>'+
   '<details class="nv-de"><summary>Riscontrate ('+ok.length+')</summary><ul>'+ok.map(riga).map(rigaR).join('')+'</ul></details>'+
   '<details class="nv-de"><summary>Testi usati</summary><ul>'+Object.keys(M.TESTI).map(function(k){return '<li>'+esc(M.TESTI[k].testo)+'</li>'}).join('')+'</ul></details>';
