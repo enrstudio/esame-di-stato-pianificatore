@@ -25,7 +25,7 @@ var EFFETTI={
  si:'Regola l’uso del suolo',
  dettaglio:'Dettaglio del piano operativo',
  conv:'Non è un piano',
- nd:'Il testo non lo dice'
+ nd:'Effetto non indicato dalla legge'
 };
 
 /* ---------- le cinque scale, dalla più ampia ---------- */

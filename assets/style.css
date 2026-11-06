@@ -214,7 +214,7 @@ nav .navg details>summary{cursor:pointer;padding:5px 8px;font-size:.9rem;line-he
 .sc-st+.sc-st{border-top:2px solid var(--line);margin-top:10px;padding-top:2px}
 .sc-rif{font-size:.82rem;white-space:normal}.sc-rif a{white-space:nowrap}
 .sc-ef{display:inline-block;font-weight:700;font-size:.8rem;line-height:1.25;padding:2px 6px;margin:2px 0;border:2px solid #4f473c;border-radius:3px;background:#fffdf8;color:#25211b}
-.sc-ef-prevale{border-color:#7a4806;background:#f8eedd}.sc-ef-no{border-color:#17505f;background:#e7f1f3}.sc-ef-si,.sc-ef-dettaglio{border-color:#3f5a12;background:#edf3e2}.sc-ef-conv{border-color:#5b3a74;background:#f1ebf6}.sc-ef-nd{border-color:#5c5c5c;background:#efefed}
+.sc-ef-prevale{border-color:#7a4806;background:#f8eedd}.sc-ef-no{border-color:#17505f;background:#e7f1f3}.sc-ef-si,.sc-ef-dettaglio{border-color:#3f5a12;background:#edf3e2}.sc-ef-conv{border-color:#5b3a74;background:#f1ebf6}.sc-ef-nd{border:0;background:none;padding:0;font-weight:400;font-style:italic;color:#5c564c}
 .sc-k{font-size:.84rem;font-weight:700;color:var(--title);margin:4px 0 4px;max-width:none}
 .sc-tx{font-size:.95rem;line-height:1.5;margin:4px 0 8px}
 .sc-ri{list-style:none;margin:6px 0 8px;padding:0}.sc-ri li{font-size:.88rem;line-height:1.35;margin:0 0 8px;max-width:none}.sc-ri abbr{text-decoration:none;font-size:1.05rem}
