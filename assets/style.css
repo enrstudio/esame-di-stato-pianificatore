@@ -236,5 +236,19 @@ nav .navg details>summary{cursor:pointer;padding:5px 8px;font-size:.9rem;line-he
  .sc-leg-p{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
 }
 @media(max-width:600px){.sc-lab{font-size:20px}.sc-c{padding:8px 10px}.sc-leg,.sc-leg-p,.sc-reg .sc-leg-p{grid-template-columns:minmax(0,1fr)}}
+/* due sezioni: Manuale (petrolio) ed Esame di Stato (ocra) */
+:root{--manuale:#17505f;--esame:#9a5f00}
+.navsw{display:flex;gap:4px;margin:0 0 14px;padding:3px;border:1px solid var(--line);border-radius:6px}
+.navsw a{flex:1;text-align:center;padding:7px 4px;border-radius:4px;font-size:.88rem;font-weight:700;text-decoration:none;color:var(--mut)}
+.navsw a.sw-manuale.on{background:var(--manuale);color:#fff}.navsw a.sw-esame.on{background:var(--esame);color:#fff}
+.navsw a:not(.on):hover{background:var(--on)}
+.navsez.sez-manuale h4{color:var(--manuale)}.navsez.sez-esame h4{color:var(--esame)}
+details.navsez{margin-bottom:10px}details.navsez>summary{cursor:pointer;font-weight:700;padding:4px 0}
+.porte{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:18px 0 26px}
+.porta{display:flex;flex-direction:column;gap:8px;padding:18px;border-radius:8px;border:1px solid var(--line);border-top:6px solid;text-decoration:none;color:inherit}
+.porta.sez-manuale{border-top-color:var(--manuale)}.porta.sez-esame{border-top-color:var(--esame)}
+.porta b{font-size:1.35rem}.porta.sez-manuale b{color:var(--manuale)}.porta.sez-esame b{color:var(--esame)}
+.porta em{font-size:.88rem;color:var(--mut)}.porta:hover{background:var(--on)}
+ul.elenco{columns:2 16rem}ul.elenco li{break-inside:avoid}
 
 .locale{color:inherit}
