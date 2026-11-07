@@ -474,4 +474,16 @@ a.logo .l2{font-size:calc(var(--nw) * .118)}
 /* Ricerca: nessun contorno al fuoco; il campo attivo si schiarisce appena (sfondo del pannello) */
 #q:focus,#q:focus-visible{outline:0;box-shadow:none;border-color:var(--line2);background:var(--panel)}
 
+/* Grafici in due versioni (regola in CLAUDE.md): originale A4 per stampa e desktop, derivata per il telefono */
+.graf-doppio{margin:16px 0 22px}
+.graf-a4{display:block}.graf-tel{display:none}
+@media(max-width:900px){.graf-a4{display:none}.graf-tel{display:block}}
+@media(min-width:1150px){.libro .graf-a4{margin-left:calc(-1 * (var(--mg) + var(--gp)));width:calc(100% + var(--mg) + var(--gp))}}  /* su desktop prende anche il margine */
+@media print{.graf-tel{display:none!important}.graf-a4{display:block!important}}
+.graf-a4>div+div{margin-top:18px}
+@media print{.libro .sez-grande .graf-a4 .grande~.grande{break-before:page}.libro .sez-grande .graf-a4 .grande svg{max-height:232mm}.graf-a4>div+div{margin-top:0}}
+@media(min-width:1150px){.libro .sez>h2+.graf-doppio,.libro .sez3>h3+.graf-doppio{padding-top:2.6rem}}  /* il grafico prende il margine: il titolo della sezione resta sopra */
+@media print{.libro .graf-a4 .grande{width:100%}.libro .graf-a4 .grande svg{width:var(--pw,100%)!important;height:auto!important;max-height:none!important;margin:0 auto}}
+@media print{.libro .sez>h2+.graf-doppio,.libro .sez3>h3+.graf-doppio{padding-top:10mm}}
+
 .locale{color:inherit}
