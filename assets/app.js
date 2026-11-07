@@ -78,3 +78,6 @@ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(adattaTesti);e
 document.querySelectorAll('.scroll svg').forEach(function(s){var w=s.parentElement;s.addEventListener('click',function(){var o=w.classList.toggle('zoom');document.body.classList.toggle('conzoom',o)})});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){var z=document.querySelector('.scroll.zoom');if(z){z.classList.remove('zoom');document.body.classList.remove('conzoom')}}});
 })();
+
+/* note a margine: aperte (e senza sommario) a schermo largo, richiudibili sul telefono */
+(function(){var mq=matchMedia('(min-width:1150px)');function f(){document.querySelectorAll('details.margine').forEach(function(d){if(mq.matches)d.open=true;else d.open=false})}if(mq.addEventListener)mq.addEventListener('change',f);f()})();

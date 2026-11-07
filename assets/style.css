@@ -237,7 +237,7 @@ nav .navg details>summary{cursor:pointer;padding:5px 8px;font-size:.9rem;line-he
 }
 @media(max-width:600px){.sc-lab{font-size:20px}.sc-c{padding:8px 10px}.sc-leg,.sc-leg-p,.sc-reg .sc-leg-p{grid-template-columns:minmax(0,1fr)}}
 /* due sezioni: Manuale (petrolio) ed Esame di Stato (ocra) */
-:root{--manuale:#17505f;--esame:#9a5f00}
+:root{--manuale:#17505f;--esame:#8a5400}
 .navsw{display:flex;gap:4px;margin:0 0 14px;padding:3px;border:1px solid var(--line);border-radius:6px}
 .navsw a{flex:1;text-align:center;padding:7px 4px;border-radius:4px;font-size:.88rem;font-weight:700;text-decoration:none;color:var(--mut)}
 .navsw a.sw-manuale.on{background:var(--manuale);color:#fff}.navsw a.sw-esame.on{background:var(--esame);color:#fff}
@@ -268,7 +268,7 @@ details.casi>summary{cursor:pointer;font-weight:700;font-size:.92rem}details.cas
 details.casi .ct{margin:10px 0 2px;font-weight:700;font-size:.88rem}details.casi ul{margin:0 0 4px}details.casi li{font-size:.88rem}
 .dc{color:var(--mut);font-style:italic}
 /* quattro sezioni */
-:root{--pit:#6a4fa0;--pgra:#1f6f99}
+:root{--pit:#6a4fa0;--pgra:#1b6189}
 .navsw{flex-wrap:wrap}.navsw a{flex:1 1 40%}
 .navsw a.sw-pit.on{background:var(--pit);color:#fff}.navsw a.sw-pgra.on{background:var(--pgra);color:#fff}
 .navsez.sez-pit h4{color:var(--pit)}.navsez.sez-pgra h4{color:var(--pgra)}
@@ -292,7 +292,7 @@ details.peg{margin:6px 0 0 4px}details.peg>summary{cursor:pointer;font-weight:70
  .libro main>footer{margin-left:calc(-1*(var(--mg) + var(--gp)))}  /* titolo e indice restano nella colonna del testo */
  .libro .sez{clear:left;margin-top:46px}.libro .sez3{clear:left;margin-top:28px}
  .libro .sez>h2,.libro .sez3>h3{float:left;width:var(--mg);margin:0 0 0 calc(-1*(var(--mg) + var(--gp)));border:0}
- .libro .sez>h2{padding-top:8px;border-top:3px solid var(--acc);font-size:1.1rem;line-height:1.3}
+ .libro .sez>h2{padding-top:8px;border-top:1px solid var(--fg);font-size:1.1rem;line-height:1.3}  /* filetto sottile, non colorato */
  .libro .sez3>h3{padding-top:3px;font-size:.96rem;color:var(--mut);line-height:1.3}
  .libro .sez>:nth-child(2),.libro .sez3>:nth-child(2){margin-top:0}
 }
@@ -309,7 +309,7 @@ details.peg{margin:6px 0 0 4px}details.peg>summary{cursor:pointer;font-weight:70
  .libro p,.libro li{max-width:none}
  .libro .sez{clear:left;margin-top:7mm}.libro .sez3{clear:left;margin-top:4mm}
  .libro .sez>h2,.libro .sez3>h3{float:left;width:var(--mgp);margin:0 0 0 calc(-1*(var(--mgp) + var(--gpp)));border:0}
- .libro .sez>h2{padding-top:2mm;border-top:1.2pt solid #17505f;font-size:11.5pt;string-set:sezione content(text)}
+ .libro .sez>h2{padding-top:2mm;border-top:.5pt solid #000;font-size:11.5pt;string-set:sezione content(text)}
  .libro .sez3>h3{font-size:10pt;color:#4f473c}
  .libro .sez,.libro .sez3{break-inside:avoid-page}  /* il titolo nel margine resta con il suo primo blocco */
  .libro .sez>:nth-child(2),.libro .sez3>:nth-child(2){margin-top:0}
@@ -326,5 +326,18 @@ details.peg{margin:6px 0 0 4px}details.peg>summary{cursor:pointer;font-weight:70
 }
 
 @media print{.solo-schermo{display:none!important}}
+
+/* Note a margine: rimandi brevi (fonti, casi, altre pagine). Telefono: riquadro richiudibile nel testo */
+details.margine{margin:4px 0 12px;padding:6px 10px;border-left:2px solid var(--line2);font-size:.88rem;color:var(--mut)}
+details.margine>summary{cursor:pointer;font-weight:700;font-size:.82rem;letter-spacing:.03em}
+details.margine p{margin:4px 0;max-width:none}
+@media(min-width:1150px){
+ .libro details.margine{float:left;clear:left;width:var(--mg);margin:2px 0 10px calc(-1*(var(--mg) + var(--gp)));padding:0;border:0;font-size:.82rem;line-height:1.4}
+ .libro details.margine>summary{display:none}
+}
+@media print{
+ .libro .margine{float:left;clear:left;width:var(--mgp);margin:0 0 3mm calc(-1*(var(--mgp) + var(--gpp)));font-size:8pt;color:#333;border:0;padding:0}
+ .libro .margine>.stampa-titoletto{display:none}
+}
 
 .locale{color:inherit}

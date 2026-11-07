@@ -69,7 +69,7 @@ function coperto(r){
  h+='<ol class="nv-t">'+r.fasi.map(fase).join('')+'</ol>';
  if(r.note.length)h+=blocco('Cosa vale in questo caso','#1b6ca8',ul(r.note.map(rigaR)));
  if(r.dopo.length)h+=blocco('Durate e scadenze','#c0392b',ul(r.dopo.map(rigaR)));
- h+=blocco('Da non perdere','#2e7d4f',ul(r.sempre.map(function(x){return '<li>'+esc(x.testo)+' '+fonti(x.fonti)+'</li>'})));
+ h+=blocco('Da non perdere','#2e7346',ul(r.sempre.map(function(x){return '<li>'+esc(x.testo)+' '+fonti(x.fonti)+'</li>'})));
  h+=blocco('Limiti','#6b6252',ul(r.limiti.map(function(x){return '<li>'+esc(x)+'</li>'})));
  h+='<div class="pfr"><b>Frase per la relazione.</b> «'+esc(r.frase)+'» <span class="note">È una base: va completata con le ragioni del progetto.</span></div>';
  h+='<details class="nv-de"><summary>Da quali regole viene questo risultato</summary><ul>'+r.usate.map(rigaR).join('')+'</ul></details>';
@@ -81,7 +81,7 @@ function vai(){
  var r=M.valuta(g);
  if(r.stato==='incompleto'){R.innerHTML='<p class="note">'+(g.azione?'Rispondi anche a: <b>'+esc(r.domanda)+'</b>':'Rispondi alle domande o scegli un caso di esempio: il risultato compare qui.')+'</p>';return}
  if(r.stato==='fuori'){R.innerHTML='<div class="nv-fu"><b>Questo caso non è coperto.</b><ul>'+r.motivi.map(rigaR).join('')+'</ul><p>Fuori da questa versione: '+esc(r.versione)+'</p><p>Leggi direttamente il testo vigente.</p></div>';return}
- if(r.stato==='stop'){R.innerHTML='<div class="pstop"><b>Così non si può fare.</b><ul>'+r.motivi.map(rigaR).join('')+'</ul></div>'+blocco('Cosa puoi proporre','#2e7d4f',ul(r.alternative.map(function(x){return '<li>'+esc(x.testo)+' '+fonti(x.fonti)+'</li>'})))+'<div class="pfr"><b>Frase per la relazione.</b> «'+esc(r.frase)+'»</div>';return}
+ if(r.stato==='stop'){R.innerHTML='<div class="pstop"><b>Così non si può fare.</b><ul>'+r.motivi.map(rigaR).join('')+'</ul></div>'+blocco('Cosa puoi proporre','#2e7346',ul(r.alternative.map(function(x){return '<li>'+esc(x.testo)+' '+fonti(x.fonti)+'</li>'})))+'<div class="pfr"><b>Frase per la relazione.</b> «'+esc(r.frase)+'»</div>';return}
  R.innerHTML=coperto(r);
 }
 
