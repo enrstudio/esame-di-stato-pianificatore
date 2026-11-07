@@ -491,5 +491,8 @@ a.logo .l2{font-size:calc(var(--nw) * .118)}
 .libro .sez{border-top:0!important;padding-top:0!important}
 @media(min-width:1150px){.libro .sez>h2{top:0}}
 @media print{.libro .sez{border-top:0!important;padding-top:0!important}}
+/* Note a margine allineate a destra, verso il testo, come i titoli */
+@media(min-width:1150px){.libro details.margine{text-align:right}}
+@media print{.libro .margine{text-align:right}}
 
 .locale{color:inherit}
