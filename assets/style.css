@@ -348,4 +348,11 @@ details.margine p{margin:4px 0;max-width:none}
 .hsw a.sw-progetto{font-weight:400;margin-left:10px;border-left:1px solid var(--line2);border-radius:0;padding-left:14px}.hsw a.sw-progetto.on{background:none;color:var(--fg);text-decoration:underline}
 .navsw a.sw-progetto.on{background:var(--on);color:var(--fg)}.navsez.sez-progetto h4{color:var(--fg)}
 
+/* Precedente / Successiva */
+nav.precsucc{display:flex;justify-content:space-between;gap:12px;margin:44px 0 10px;padding-top:14px;border-top:1px solid var(--line);position:static;height:auto;border-right:0;overflow:visible;background:none}
+nav.precsucc a{display:flex;flex-direction:column;max-width:48%;padding:8px 12px;border:1px solid var(--line);border-radius:4px;text-decoration:none;color:var(--fg);font-weight:700;font-size:.92rem;line-height:1.3}
+nav.precsucc a small{font-weight:400;color:var(--mut);font-size:.78rem;margin-bottom:2px}nav.precsucc a.succ{text-align:right;margin-left:auto}nav.precsucc a:hover{background:var(--on)}
+@media(max-width:900px){nav.precsucc{display:flex}}
+@media print{nav.precsucc{display:none}}
+
 .locale{color:inherit}
