@@ -344,4 +344,8 @@ details.margine p{margin:4px 0;max-width:none}
  .libro .margine>.stampa-titoletto{display:none}
 }
 
+/* «Il progetto»: ultima voce dell'header, staccata dalle sezioni */
+.hsw a.sw-progetto{font-weight:400;margin-left:10px;border-left:1px solid var(--line2);border-radius:0;padding-left:14px}.hsw a.sw-progetto.on{background:none;color:var(--fg);text-decoration:underline}
+.navsw a.sw-progetto.on{background:var(--on);color:var(--fg)}.navsez.sez-progetto h4{color:var(--fg)}
+
 .locale{color:inherit}

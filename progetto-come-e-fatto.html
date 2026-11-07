@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="light" name="color-scheme"/><title>Come è fatto · Quaderno di pianificazione</title><link href="assets/style.css" rel="stylesheet"/></head><body class="libro">
+<header><a class="brand" href="index.html">Quaderno di pianificazione</a><div class="sr"><label class="vh" for="q">Cerca nel sito</label><input autocomplete="off" id="q" placeholder="Cerca: art. 17, UTOE, perequazione…" type="search"/><div hidden="" id="res"></div></div><div aria-label="Sezioni del sito" class="hsw" role="navigation"><a class="sw-manuale" href="manuale.html">Manuale</a><a class="sw-pit" href="pit.html">PIT</a><a class="sw-pgra" href="pgra.html">PGRA</a><a class="sw-esame" href="esame.html">Esame di Stato</a><a aria-current="true" class="sw-progetto on" href="progetto.html">Il progetto</a></div><button aria-expanded="false" aria-label="Apri il menu" id="mn">Menu</button></header>
+<div class="lay"><nav aria-label="Sezioni" id="nav"><div aria-label="Sezioni del sito" class="navsw" role="navigation"><a class="sw-manuale" href="manuale.html">Manuale</a><a class="sw-pit" href="pit.html">PIT</a><a class="sw-pgra" href="pgra.html">PGRA</a><a class="sw-esame" href="esame.html">Esame di Stato</a><a aria-current="true" class="sw-progetto on" href="progetto.html">Il progetto</a></div><div class="navsez sez-progetto"><h4>Il progetto</h4><ul><li><a href="progetto.html">Il progetto</a></li><li><a class="on" href="progetto-come-e-fatto.html">Come è fatto</a></li><li><a href="progetto-limiti.html">Limiti</a></li></ul></div></nav><main><details class="toc"><summary>In questa pagina</summary><ul><li><a href="#i-principi">I principi</a></li><li><a href="#il-metodo-diataxis">Il metodo: Diátaxis</a></li><li><a href="#limpaginazione">L'impaginazione</a></li><li><a href="#gli-strati">Gli strati</a></li><li><a href="#i-controlli">I controlli</a></li><li><a href="#che-cosa-manca">Che cosa manca</a></li></ul></details><h1 id="come-e-fatto">Come è fatto</h1>
+<p><em>Pagina tecnica: architettura, principi, controlli. Prima stesura del 07/11/2026.</em></p>
+<p><strong>In una riga.</strong> Il sito è generato da testi in Markdown e da file di dati con un generatore scritto su misura, senza framework; segue il metodo Diátaxis per organizzare i contenuti e la tradizione dei manuali con titoli nel margine per impaginarli.</p>
+<div class="sez"><h2 id="i-principi">I principi</h2><ol>
+<li><strong>Una sede per ogni contenuto.</strong> Una definizione, una tabella o una figura stanno in un solo posto; le altre pagine rimandano lì o la richiamano. Così si corregge una volta sola.</li>
+<li><strong>Una pagina, una domanda.</strong> Ogni pagina appartiene a un tipo e risponde a un solo bisogno del lettore.</li>
+<li><strong>Dichiarare la verifica.</strong> Ogni pagina dice che cosa è stato letto sul testo, a che data, e che cosa no.</li>
+<li><strong>Linkare gli originali.</strong> Gli atti dei Comuni e le fonti ufficiali si collegano, non si ripubblicano; i testi di legge riprodotti sono trascrizioni non ufficiali con il link alla fonte.</li>
+<li><strong>Il colore non è mai l'unico segno.</strong> Contrasto controllato, etichette e tratti oltre al colore (lavoro in corso sulle legende).</li>
+</ol></div>
+<div class="sez"><h2 id="il-metodo-diataxis">Il metodo: Diátaxis</h2><p>Diátaxis (di Daniele Procida) divide la documentazione secondo quattro bisogni di chi legge. Ogni pagina deve servirne uno.</p></div>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Bisogno</th>
+<th>Tipo Diátaxis</th>
+<th>In questo sito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Imparare</td>
+<td>Percorso guidato</td>
+<td>Esame di Stato: percorsi di studio, prove svolte</td>
+</tr>
+<tr>
+<td>Fare una cosa</td>
+<td>Guida pratica</td>
+<td>Pipeline di lavoro, prassi</td>
+</tr>
+<tr>
+<td>Trovare un dato</td>
+<td>Riferimento</td>
+<td>Testi integrali, schede delle norme, registro degli atti</td>
+</tr>
+<tr>
+<td>Capire</td>
+<td>Spiegazione</td>
+<td>Concetti, storia e teoria</td>
+</tr>
+</tbody>
+</table></div>
+<p>Atti e procedimenti stanno tra riferimento e spiegazione. Dalla regola di Diátaxis per le pagine di riferimento («describe and only describe», e invece di spiegare «link to» le altre pagine) viene la regola delle note a margine: rimandano, non spiegano.</p>
+<div class="sez"><h2 id="limpaginazione">L'impaginazione</h2><p>La base è quella dei manuali di tradizione svizzera: griglia a due colonne, titoli di sezione nel margine sinistro allineati verso il testo, una riga sottile sopra la colonna del testo all'inizio di ogni sezione. Lo stesso schema vale a schermo (oltre 1150 pixel) e in stampa A4; sul telefono la pagina torna a una colonna. È anche l'impaginazione del sito di Diátaxis.</p></div>
+<p>In stampa:</p>
+<ul>
+<li>le intestazioni correnti riportano il titolo della pagina e la sezione;</li>
+<li>un oggetto grande (oltre due terzi della pagina, o una tabella con più di 5 colonne o 25 righe) va su una pagina dedicata, verticale o orizzontale, centrato;</li>
+<li>le figure molto alte si dividono in parti;</li>
+<li>i riquadri richiudibili si stampano aperti; la sezione per l'esame non si stampa.</li>
+</ul>
+<p>Il carattere è Atkinson Hyperlegible Next del Braille Institute, disegnato per distinguere le lettere che si confondono (licenza SIL Open Font).</p>
+<div class="sez"><h2 id="gli-strati">Gli strati</h2><div class="tw"><table>
+<thead>
+<tr>
+<th>Strato</th>
+<th>Che cosa contiene</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Testi</strong></td>
+<td>File Markdown: Manuale (atti, procedimenti, concetti, norme), dispense, metodi, letture dei piani, pagine di progetto</td>
+</tr>
+<tr>
+<td><strong>Dati</strong></td>
+<td>Glossario, registro degli atti reali, mappa del Manuale con lo stato delle voci, censimento dell'ambito 06, testi di legge estratti in formato strutturato, elenco delle prove</td>
+</tr>
+<tr>
+<td><strong>Generazione</strong></td>
+<td>Uno script Python trasforma i testi in pagine e aggiunge da solo i collegamenti agli articoli e al glossario, i riquadri «Casi reali», le figure richiamate dalla loro sede, gli elenchi «dove compare»</td>
+</tr>
+<tr>
+<td><strong>Figure</strong></td>
+<td>Infografiche in SVG disegnate da script, non a mano, con una tavolozza comune</td>
+</tr>
+<tr>
+<td><strong>Interattività</strong></td>
+<td>JavaScript senza librerie: ricerca, navigatore degli iter, città in pianta, viste a più scale</td>
+</tr>
+<tr>
+<td><strong>Stampa</strong></td>
+<td>PDF prodotti con WeasyPrint dallo stesso HTML, con le regole di stampa del foglio di stile</td>
+</tr>
+<tr>
+<td><strong>Pubblicazione</strong></td>
+<td>Una copia pubblica filtrata (solo i file ammessi, controllo dei dati personali), pubblicata con GitHub Pages; i sorgenti stanno in una repository privata</td>
+</tr>
+</tbody>
+</table></div></div>
+<div class="sez"><h2 id="i-controlli">I controlli</h2><ul>
+<li><strong>Inventario dei concetti</strong>: per ogni voce del glossario, dove compare e dove viene definita di nuovo. Alimenta gli elenchi «dove compare» e segnala i doppioni da ridurre.</li>
+<li><strong>Controllo dei collegamenti</strong>: nessun link o ancora interna rotta, verificato a ogni pubblicazione.</li>
+<li><strong>Controllo dei colori</strong>: contrasto del testo secondo le linee guida WCAG (almeno 4,5:1) nel foglio di stile e nelle figure; elenco delle legende fatte di soli colori.</li>
+<li><strong>Livelli di verifica</strong>: dichiarati pagina per pagina.</li>
+</ul></div>
+<div class="sez"><h2 id="che-cosa-manca">Che cosa manca</h2><ul>
+<li>Un controllo automatico dell'aggiornamento delle fonti (date dei testi, link esterni): è in programma.</li>
+<li>Test automatici del generatore.</li>
+<li>La versione delle legende leggibile in bianco e nero.</li>
+</ul></div>
+<footer class="credit">© 2026 enrstudio. Tutti i diritti riservati: consultazione e citazione breve con la fonte; materiali di terzi esclusi. <a href="https://github.com/enrstudio/esame-di-stato-pianificatore/blob/main/LICENSE">Licenza</a>.<br/>Font <a href="https://fonts.google.com/specimen/Atkinson+Hyperlegible+Next">Atkinson Hyperlegible Next</a> del Braille Institute, licenza OFL.</footer></main></div><script src="assets/indice.js"></script><script src="assets/app.js"></script></body></html>
