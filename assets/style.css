@@ -1,8 +1,6 @@
 /* Tema chiaro ad alta leggibilità. Contrasti calcolati: testo 14.8:1, testo secondario e link oltre 7:1.
    Niente bianco puro né nero puro, niente maiuscoletto, testo a sinistra, righe di circa 70 caratteri.
    Font Atkinson Hyperlegible Next del Braille Institute, licenza OFL. */
-@font-face{font-family:"Barlow Condensed";src:url("fonts/BarlowCondensed-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:"Barlow Condensed";src:url("fonts/BarlowCondensed-700.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
 @font-face{font-family:"Atkinson Hyperlegible Next";src:url("fonts/AtkinsonHyperlegibleNext-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Atkinson Hyperlegible Next";src:url("fonts/AtkinsonHyperlegibleNext-Italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
 @font-face{font-family:"Atkinson Hyperlegible Next";src:url("fonts/AtkinsonHyperlegibleNext-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
@@ -391,16 +389,19 @@ header .sr{flex:0 1 var(--srw);max-width:var(--srw);margin-left:calc(310px + var
 @media(max-width:1149px){.libro{--srl:40px}}
 nav{background:var(--bg);border-right:0;scrollbar-width:none;padding-top:0}nav::-webkit-scrollbar{display:none}
 nav{top:0;height:100vh;margin-top:calc(-1*var(--hh));z-index:6;padding-top:22px}
-a.logo,a.logo:visited{display:block;margin:0 0 26px 8px;text-decoration:none;font-family:"Barlow Condensed","Arial Narrow",sans-serif;line-height:.92;color:var(--title)}
+a.logo,a.logo:visited{display:block;margin:0 0 26px 8px;text-decoration:none;line-height:.92;color:var(--title)}
 a.logo span{display:block}
-a.logo .l1{font-weight:500;font-size:1.4rem;color:var(--tortora);text-transform:uppercase;letter-spacing:.02em;margin-bottom:2px}
-a.logo .l2{white-space:nowrap;font-weight:700;font-size:2.2rem;text-transform:uppercase;letter-spacing:-.005em}
+a.logo .l1{font-weight:400;font-size:1.05rem;color:var(--tortora);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+a.logo .l2{white-space:nowrap;font-weight:700;font-size:1.48rem;text-transform:uppercase;letter-spacing:.01em;line-height:1.08}
 a.logo .l2:nth-child(2){color:var(--rug)}
-a.logo .l3{font-weight:500;font-size:1.4rem;color:var(--tortora);margin-top:5px}
+a.logo .l3{font-weight:400;font-size:1.05rem;color:var(--tortora);margin-top:6px}
 a.logo:hover .l2{text-decoration:underline;text-decoration-thickness:2px}
-@media(max-width:900px){header{padding:0 16px}header .brand{display:block;font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:700;text-transform:uppercase;font-size:.86rem;line-height:1;white-space:normal;max-width:7.5em;color:var(--title)}header .sr{margin-left:0;flex:1}nav{margin-top:0;height:auto;padding-top:12px}a.logo{display:none}}
+@media(max-width:900px){header{padding:0 16px}header .brand{display:block;font-weight:700;text-transform:uppercase;font-size:.8rem;line-height:1.05;white-space:normal;max-width:9em;color:var(--title)}header .sr{margin-left:0;flex:1}nav{margin-top:0;height:auto;padding-top:12px}a.logo{display:none}}
 .largo header .brand{display:block}.largo header .sr{margin-left:0}.largo a.logo{display:none}
 /* Stampa: nelle note a margine il link in grassetto */
 @media print{.libro .margine a,details.margine a{font-weight:700}}
+
+/* Sezione Esame di Stato: i colori di prima (accento blu petrolio); il rosso ruggine resta al Manuale e al marchio */
+body.s-esame{--acc:#17505f;--title:#1f2f33;--vis:#4f3a6b}
 
 .locale{color:inherit}
