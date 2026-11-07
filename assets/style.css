@@ -14,7 +14,7 @@ a{color:var(--acc);text-underline-offset:.16em}a:visited{color:var(--vis)}a:hove
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 header{position:sticky;top:0;z-index:5;display:flex;gap:16px;align-items:center;height:var(--hh);padding:0 20px;background:var(--panel);border-bottom:1px solid var(--line2)}
 .brand,.brand:visited{font-weight:700;color:var(--title);text-decoration:none;white-space:nowrap}
-#mn{display:none;font:inherit;background:var(--panel);color:var(--fg);border:1px solid var(--line2);border-radius:4px;padding:5px 12px;cursor:pointer}
+#mn{margin-left:auto;display:none;font:inherit;background:var(--panel);color:var(--fg);border:1px solid var(--line2);border-radius:4px;padding:5px 12px;cursor:pointer}
 .sr{position:relative;flex:1;max-width:660px;min-width:0}
 #q,#ff{width:100%;font:inherit;padding:6px 12px;background:var(--bg);color:var(--fg);border:1px solid var(--line2);border-radius:4px}#ff{max-width:420px}#q::placeholder{color:var(--mut);opacity:1}
 #res{position:absolute;left:0;right:0;top:calc(100% + 4px);max-height:72vh;overflow:auto;background:var(--panel);border:1px solid var(--line2);box-shadow:0 8px 22px rgba(60,50,30,.18)}
@@ -273,5 +273,16 @@ details.casi .ct{margin:10px 0 2px;font-weight:700;font-size:.88rem}details.casi
 .navsw a.sw-pit.on{background:var(--pit);color:#fff}.navsw a.sw-pgra.on{background:var(--pgra);color:#fff}
 .navsez.sez-pit h4{color:var(--pit)}.navsez.sez-pgra h4{color:var(--pgra)}
 .porta.sez-pit{border-top-color:var(--pit)}.porta.sez-pit b{color:var(--pit)}.porta.sez-pgra{border-top-color:var(--pgra)}.porta.sez-pgra b{color:var(--pgra)}
+
+/* sezioni nell'header (schermo largo); nel menu in colonna (telefono) */
+.hsw{display:flex;gap:2px;flex:none}.hsw a{padding:6px 11px;border-radius:4px;font-size:.88rem;font-weight:700;text-decoration:none;color:var(--mut);white-space:nowrap}
+.hsw a:hover{background:var(--on)}.hsw a.on{color:#fff}.hsw a.sw-manuale.on{background:var(--manuale)}.hsw a.sw-pit.on{background:var(--pit)}.hsw a.sw-pgra.on{background:var(--pgra)}.hsw a.sw-esame.on{background:var(--esame)}
+@media(min-width:901px){.navsw{display:none}}
+@media(max-width:900px){.hsw{display:none}.navsw{flex-direction:column}.navsw a{flex:none;text-align:left;padding:8px 12px}}
+@media(min-width:901px) and (max-width:1150px){.hsw a{padding:6px 7px;font-size:.82rem}header{gap:10px}}
+/* «Per l'Esame di Stato» */
+details.perlesame{margin:8px 0 16px;padding:8px 12px;border:1px solid var(--line);border-left:4px solid var(--esame);border-radius:4px}
+details.perlesame>summary{cursor:pointer;font-weight:700;color:var(--esame)}details.perlesame>summary small,details.peg>summary small{font-weight:400;color:var(--mut)}
+details.peg{margin:6px 0 0 4px}details.peg>summary{cursor:pointer;font-weight:700;font-size:.92rem}details.peg ul{margin:4px 0 6px}
 
 .locale{color:inherit}
