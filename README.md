@@ -1,4 +1,4 @@
-# Quaderno di pianificazione
+# Note di pianificazione territoriale
 
 Appunti di studio sul governo del territorio in Toscana, in due sezioni: un Manuale da consultare (atti, procedimenti, concetti, norme, casi) e una sezione per l’esame di Stato di pianificatore territoriale (dispense, metodi, prove svolte, schemi). Non sono un testo ufficiale. Le norme rimandano alle fonti ufficiali: controlla sempre il testo vigente.
 
