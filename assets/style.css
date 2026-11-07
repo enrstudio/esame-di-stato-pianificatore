@@ -478,12 +478,14 @@ a.logo .l2{font-size:calc(var(--nw) * .118)}
 .graf-doppio{margin:16px 0 22px}
 .graf-a4{display:block}.graf-tel{display:none}
 @media(max-width:900px){.graf-a4{display:none}.graf-tel{display:block}}
-@media(min-width:1150px){.libro .graf-a4{margin-left:calc(-1 * (var(--mg) + var(--gp)));width:calc(100% + var(--mg) + var(--gp))}}  /* su desktop prende anche il margine */
 @media print{.graf-tel{display:none!important}.graf-a4{display:block!important}}
 .graf-a4>div+div{margin-top:18px}
 @media print{.libro .sez-grande .graf-a4 .grande~.grande{break-before:page}.libro .sez-grande .graf-a4 .grande svg{max-height:232mm}.graf-a4>div+div{margin-top:0}}
-@media(min-width:1150px){.libro .sez>h2+.graf-doppio,.libro .sez3>h3+.graf-doppio{padding-top:2.6rem}}  /* il grafico prende il margine: il titolo della sezione resta sopra */
 @media print{.libro .graf-a4 .grande{width:100%}.libro .graf-a4 .grande svg{width:var(--pw,100%)!important;height:auto!important;max-height:none!important;margin:0 auto}}
-@media print{.libro .sez>h2+.graf-doppio,.libro .sez3>h3+.graf-doppio{padding-top:10mm}}
+/* Stampa dei grafici A4 (sezione su pagina dedicata): titolo della sezione nell'angolo in alto a sinistra, grafico centrato nella pagina */
+@media print{
+ .libro .sez-grande>h2,.libro .sez-grande>h3{float:none;position:static;width:auto;text-align:left;margin:0 0 5mm calc(-1 * (var(--mgp) + var(--gpp)))}
+ .libro .graf-a4 .grande{margin-left:calc(-1 * (var(--mgp) + var(--gpp)));width:auto;align-items:center}
+}
 
 .locale{color:inherit}
