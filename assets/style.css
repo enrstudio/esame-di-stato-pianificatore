@@ -297,11 +297,11 @@ details.peg{margin:6px 0 0 4px}details.peg>summary{cursor:pointer;font-weight:70
  .libro .sez>:nth-child(2),.libro .sez3>:nth-child(2){margin-top:0}
 }
 /* stampa: stesse regole in millimetri; oggetti grandi su una pagina dedicata, verticale o orizzontale */
-@page{size:A4;margin:18mm 16mm 20mm 20mm;@bottom-right{content:counter(page);font:9pt var(--font);color:#555}@top-right{content:string(sezione);font:8.5pt var(--font);color:#555}@top-left{content:string(titolo);font:8.5pt var(--font);color:#555}}
-@page verticale{size:A4 portrait}
-@page orizzontale{size:A4 landscape}
+@page{size:A4;margin:18mm 38mm 20mm 14mm;@bottom-right{content:counter(page);font:9pt var(--font);color:#555}@top-right{content:string(sezione);font:8.5pt var(--font);color:#555}@top-left{content:string(titolo);font:8.5pt var(--font);color:#555}}
+@page verticale{size:A4 portrait;margin:18mm 16mm 20mm 16mm}
+@page orizzontale{size:A4 landscape;margin:16mm 18mm 16mm 18mm}
 @media print{
- .libro{--mgp:42mm;--gpp:7mm}
+ .libro{--mgp:36mm;--gpp:6mm}
  .libro html,html{font-size:10pt}
  .libro main{max-width:none;padding:0 0 0 calc(var(--mgp) + var(--gpp))}
  .libro main>h1{margin:0 0 4mm 0;font-size:20pt;string-set:titolo content(text)}
@@ -434,6 +434,22 @@ a.logo .l2{font-size:2.36rem}
  aside.indice ul{padding-left:10px}
  aside.indice p{padding-left:10px;border-left:1px solid var(--line2);margin:0;padding-bottom:8px}
  aside.indice ul{border-left-color:var(--line2)}
+}
+
+/* ===== Rev. 07/11 notte ===== */
+/* Logo: altezza fissa e aria sotto; l'indice di pagina a destra parte alla stessa altezza del menu a sinistra */
+:root{--logoh:200px;--logom:30px}
+a.logo,a.logo:visited{height:var(--logoh);margin-bottom:var(--logom);box-sizing:border-box}
+@media(min-width:1400px){
+ aside.indice{padding-top:calc(var(--logoh) + var(--logom) - var(--hh));top:var(--hh)}
+ aside.indice p{border-left:0;padding-left:0}
+ aside.indice ul{border-left:0;padding-left:0}
+ .hsw a.sw-progetto{padding-left:0;border-left:0;margin-left:22px}
+}
+/* Colonna del testo al centro della finestra (il margine dei titoli sporge a sinistra) */
+@media(min-width:1150px){
+ .libro{--pl:max(calc(40px + var(--mg) + var(--gp)),calc((100vw - var(--col)) / 2 - var(--nw)));--srl:var(--pl)}
+ .libro main{padding-left:var(--pl);max-width:calc(var(--pl) + var(--col) + 40px)}
 }
 
 .locale{color:inherit}
