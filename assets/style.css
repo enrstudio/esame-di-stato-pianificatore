@@ -499,5 +499,7 @@ a.logo .l2{font-size:calc(var(--nw) * .118)}
  .libro .sez>h2,.libro .sez3>h3{text-align:left}
  .libro .margine{text-align:left}
 }
+/* I grafici occupano sempre tutta la larghezza della colonna del testo (non più 560 px centrati) */
+@media screen{.libro main div[style*="max-width:560px"]:not(.graf-tel){max-width:none!important;margin-left:0!important;margin-right:0!important}}
 
 .locale{color:inherit}
