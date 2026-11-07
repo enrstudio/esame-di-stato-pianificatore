@@ -325,4 +325,6 @@ details.peg{margin:6px 0 0 4px}details.peg>summary{cursor:pointer;font-weight:70
  .libro .stampa-riquadro.toc{display:none}
 }
 
+@media print{.solo-schermo{display:none!important}}
+
 .locale{color:inherit}
