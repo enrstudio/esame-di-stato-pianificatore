@@ -428,7 +428,6 @@ a.logo .l2{font-size:2.36rem}
 /* Indice contestuale: colonna che scende dal pulsante «Il progetto» (la riga a sinistra continua quella del pulsante) */
 @media(min-width:1400px){
  header{padding-right:20px}
- .hsw a.sw-progetto{box-sizing:border-box;width:210px;margin-left:12px;padding-left:10px;text-align:left}
  .con-indice .lay{grid-template-columns:var(--nw) minmax(0,1fr) 230px}
  aside.indice{padding:30px 20px 20px 0}
  aside.indice ul{padding-left:10px}
@@ -448,7 +447,7 @@ a.logo,a.logo:visited{height:var(--logoh);margin-bottom:var(--logom);box-sizing:
    Il menu e il marchio si adattano alla larghezza (--nw); la colonna del testo (--col) sta al centro;
    i titoli di sezione sono posizionati in assoluto nel margine sinistro e non occupano spazio nel flusso;
    la colonna destra (indice) è stretta e parte sotto i pulsanti delle sezioni */
-:root{--nw:clamp(280px,19vw,360px);--rw:290px}
+:root{--nw:clamp(280px,19vw,360px);--rw:320px}
 a.logo .l1,a.logo .l3{font-size:calc(var(--nw) * .085)}
 a.logo .l2{font-size:calc(var(--nw) * .118)}
 @media(min-width:1150px){
@@ -468,7 +467,7 @@ a.logo .l2{font-size:calc(var(--nw) * .118)}
  .largo .lay{display:block}
  .hsw{flex:0 0 var(--rw);margin-left:auto;box-sizing:border-box;padding:0 12px 0 0;border-left:0;justify-content:flex-start;gap:0}
  .hsw a{padding:6px 8px;font-size:.84rem}
- .hsw a.sw-progetto{margin-left:auto;padding-left:10px}
+ .hsw a.sw-progetto{margin-left:10px;padding-left:12px}
  aside.indice{padding-right:16px}
  aside.indice p,aside.indice ul{padding-left:8px}
 }
