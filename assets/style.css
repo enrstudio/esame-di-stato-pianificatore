@@ -487,5 +487,9 @@ a.logo .l2{font-size:calc(var(--nw) * .118)}
  .libro .sez-grande>h2,.libro .sez-grande>h3{float:none;position:static;width:auto;text-align:left;margin:0 0 5mm calc(-1 * (var(--mgp) + var(--gpp)))}
  .libro .graf-a4 .grande{margin-left:calc(-1 * (var(--mgp) + var(--gpp)));width:auto;align-items:center}
 }
+/* Prova (07/11): senza le righe sopra le sezioni, a schermo e in stampa; resta lo spazio */
+.libro .sez{border-top:0!important;padding-top:0!important}
+@media(min-width:1150px){.libro .sez>h2{top:0}}
+@media print{.libro .sez{border-top:0!important;padding-top:0!important}}
 
 .locale{color:inherit}
