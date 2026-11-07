@@ -471,7 +471,7 @@ a.logo .l2{font-size:calc(var(--nw) * .118)}
  aside.indice{padding-right:16px}
  aside.indice p,aside.indice ul{padding-left:8px}
 }
-/* Ricerca: niente contorno rosso al fuoco; resta un segnale visibile (bordo scuro) per chi usa la tastiera */
-#q:focus,#q:focus-visible{outline:0;border-color:var(--fg);box-shadow:inset 0 0 0 1px var(--fg)}
+/* Ricerca: nessun contorno al fuoco; il campo attivo si schiarisce appena (sfondo del pannello) */
+#q:focus,#q:focus-visible{outline:0;box-shadow:none;border-color:var(--line2);background:var(--panel)}
 
 .locale{color:inherit}
