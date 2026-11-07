@@ -19,7 +19,7 @@ header{position:sticky;top:0;z-index:5;display:flex;gap:16px;align-items:center;
 #q,#ff{width:100%;font:inherit;padding:6px 12px;background:var(--bg);color:var(--fg);border:1px solid var(--line2);border-radius:0}#ff{max-width:420px}#q::placeholder{color:var(--mut);opacity:1}
 #res{position:absolute;left:0;right:0;top:calc(100% + 4px);max-height:72vh;overflow:auto;background:var(--panel);border:1px solid var(--line2);box-shadow:0 8px 22px rgba(60,50,30,.18)}
 #res a,#res a:visited{display:block;padding:10px 14px;border-top:1px solid var(--line);text-decoration:none;color:var(--fg)}#res a:first-child{border-top:0}#res a:hover,#res a.sel{background:var(--on)}#res b{display:block}#res small{color:var(--mut);font-size:.86rem}#res p{margin:0;padding:12px}
-.lay{display:grid;grid-template-columns:310px minmax(0,1fr)}
+.lay{display:grid;grid-template-columns:var(--nw) minmax(0,1fr)}
 nav{position:sticky;top:var(--hh);align-self:start;height:calc(100vh - var(--hh));overflow:auto;padding:18px 18px 40px;background:var(--panel);border-right:1px solid var(--line)}
 nav h4{margin:20px 0 4px;font-size:.86rem;font-weight:700;color:var(--mut)}nav h4:first-child{margin-top:0}
 nav ul{list-style:none;margin:0;padding:0}nav li a,nav li a:visited{display:block;padding:5px 8px;text-decoration:none;font-size:.9rem;line-height:1.35;color:var(--fg);border-radius:0}nav a:hover{background:var(--on)}nav a.on,nav a.on:visited{background:var(--on);font-weight:700}
@@ -358,7 +358,7 @@ nav.precsucc a small{font-weight:400;color:var(--mut);font-size:.78rem;margin-bo
 /* Indice contestuale a destra: solo schermo molto largo; sotto resta l'indice richiudibile nel testo */
 aside.indice{display:none}
 @media(min-width:1400px){
- .con-indice .lay{grid-template-columns:310px minmax(0,1fr) 230px}
+ .con-indice .lay{grid-template-columns:var(--nw) minmax(0,1fr) 230px}
  .con-indice main .toc{display:none}
  aside.indice{display:block;position:sticky;top:calc(var(--hh) + 20px);align-self:start;max-height:calc(100vh - var(--hh) - 40px);overflow-y:auto;padding:30px 20px 20px 0;font-size:.84rem;line-height:1.35}
  aside.indice p{margin:0 0 8px;font-weight:700;color:var(--mut);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase}
@@ -384,7 +384,7 @@ aside.indice{display:none}
 :root{--rug:#b8401f;--tortora:#7d7366;--srl:40px;--srw:40rem}
 header{background:var(--bg);border-bottom:0;padding:0 20px 0 0}
 header .brand{display:none}
-header .sr{flex:0 1 var(--srw);max-width:var(--srw);margin-left:calc(310px + var(--srl))}
+header .sr{flex:0 1 var(--srw);max-width:var(--srw);margin-left:calc(var(--nw) + var(--srl))}
 .libro{--srl:calc(40px + var(--mg) + var(--gp));--srw:var(--col,40rem)}
 @media(max-width:1149px){.libro{--srl:40px}}
 nav{background:var(--bg);border-right:0;scrollbar-width:none;padding-top:0}nav::-webkit-scrollbar{display:none}
@@ -419,6 +419,21 @@ a.logo .l3{font-weight:400;font-size:1.45rem;color:var(--tortora);margin-top:4px
  .logo-home .l2{font-weight:700;font-size:2.3rem;line-height:1.02}
  .logo-home .l2:nth-child(2){color:var(--rug)}
  .logo-home .l3{font-size:1.6rem;color:var(--tortora);margin-top:4px}
+}
+
+/* Logo più grande: barra laterale più larga */
+:root{--nw:360px}
+a.logo .l1,a.logo .l3{font-size:1.7rem}
+a.logo .l2{font-size:2.36rem}
+/* Indice contestuale: colonna che scende dal pulsante «Il progetto» (la riga a sinistra continua quella del pulsante) */
+@media(min-width:1400px){
+ header{padding-right:20px}
+ .hsw a.sw-progetto{box-sizing:border-box;width:210px;margin-left:12px;padding-left:10px;text-align:left}
+ .con-indice .lay{grid-template-columns:var(--nw) minmax(0,1fr) 230px}
+ aside.indice{padding:30px 20px 20px 0}
+ aside.indice ul{padding-left:10px}
+ aside.indice p{padding-left:10px;border-left:1px solid var(--line2);margin:0;padding-bottom:8px}
+ aside.indice ul{border-left-color:var(--line2)}
 }
 
 .locale{color:inherit}
