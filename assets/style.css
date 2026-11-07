@@ -355,4 +355,29 @@ nav.precsucc a small{font-weight:400;color:var(--mut);font-size:.78rem;margin-bo
 @media(max-width:900px){nav.precsucc{display:flex}}
 @media print{nav.precsucc{display:none}}
 
+/* Indice contestuale a destra: solo schermo molto largo; sotto resta l'indice richiudibile nel testo */
+aside.indice{display:none}
+@media(min-width:1400px){
+ .con-indice .lay{grid-template-columns:310px minmax(0,1fr) 230px}
+ .con-indice main .toc{display:none}
+ aside.indice{display:block;position:sticky;top:calc(var(--hh) + 20px);align-self:start;max-height:calc(100vh - var(--hh) - 40px);overflow-y:auto;padding:30px 20px 20px 0;font-size:.84rem;line-height:1.35}
+ aside.indice p{margin:0 0 8px;font-weight:700;color:var(--mut);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase}
+ aside.indice ul{list-style:none;margin:0;padding:0 0 0 10px;border-left:1px solid var(--line)}
+ aside.indice li{margin:0 0 6px;max-width:none}
+ aside.indice a{color:var(--mut);text-decoration:none}aside.indice a:hover{text-decoration:underline}
+ aside.indice a.qui{color:var(--fg);font-weight:700}
+}
+@media print{aside.indice{display:none}}
+
+/* Una sola misura per la colonna del testo: riga, paragrafi, elenchi, riquadri e tabelle hanno la stessa larghezza */
+@media(min-width:1150px){
+ .libro{--col:38rem}
+ .libro main{max-width:calc(80px + var(--mg) + var(--gp) + var(--col));box-sizing:border-box}
+ .libro main p,.libro main li,.libro .box,.libro .ok,.libro .sk,.libro .hand,.libro .lead,.libro figcaption,.libro .cap{max-width:none}
+ .libro main>footer,.libro nav.precsucc{max-width:none}
+}
+/* Stampa dal browser: le note a margine sono aperte (app.js) e senza titoletto */
+@media print{.libro details.margine>summary{display:none}details.margine>summary{display:none}}
+@media print{details.margine::details-content{content-visibility:visible;display:block}}  /* Chrome recenti, anche senza JavaScript */
+
 .locale{color:inherit}

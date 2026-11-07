@@ -81,3 +81,12 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){var z=docum
 
 /* note a margine: aperte (e senza sommario) a schermo largo, richiudibili sul telefono */
 (function(){var mq=matchMedia('(min-width:1150px)');function f(){document.querySelectorAll('details.margine').forEach(function(d){if(mq.matches)d.open=true;else d.open=false})}if(mq.addEventListener)mq.addEventListener('change',f);f()})();
+
+// Stampa: apre le note a margine, poi le richiude com'erano
+addEventListener('beforeprint',()=>document.querySelectorAll('details.margine:not([open])').forEach(d=>{d.open=true;d.dataset.chiusa=1}));
+addEventListener('afterprint',()=>document.querySelectorAll('details.margine[data-chiusa]').forEach(d=>{d.open=false;delete d.dataset.chiusa}));
+// Indice contestuale: evidenzia la sezione che si sta leggendo
+(()=>{const L=[...document.querySelectorAll('aside.indice a')];if(!L.length||!('IntersectionObserver' in window))return;
+ const T=L.map(a=>document.getElementById(decodeURIComponent(a.hash.slice(1)))).filter(Boolean);
+ const io=new IntersectionObserver(()=>{let k=0;T.forEach((h,i)=>{if(h.getBoundingClientRect().top<innerHeight*0.3)k=i});L.forEach((a,i)=>a.classList.toggle('qui',i===k))},{rootMargin:'0px 0px -60% 0px'});
+ T.forEach(h=>io.observe(h));})();
