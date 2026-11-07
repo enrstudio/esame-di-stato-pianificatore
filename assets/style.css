@@ -401,7 +401,24 @@ a.logo:hover .l2{text-decoration:underline;text-decoration-thickness:2px}
 /* Stampa: nelle note a margine il link in grassetto */
 @media print{.libro .margine a,details.margine a{font-weight:700}}
 
-/* Sezione Esame di Stato: i colori di prima (accento blu petrolio); il rosso ruggine resta al Manuale e al marchio */
-body.s-esame{--acc:#17505f;--title:#1f2f33;--vis:#4f3a6b}
+
+/* ===== Marchio (rev.): Atkinson, grande, minuscolo; «Note di» in corsivo. Resta visibile quando il menu scorre ===== */
+/* Un solo colore per tutto il sito: le sezioni non hanno più un colore proprio */
+:root{--manuale:var(--acc);--esame:var(--acc);--pit:var(--acc);--pgra:var(--acc)}
+nav{padding-top:0}
+a.logo,a.logo:visited{position:sticky;top:0;z-index:2;background:var(--bg);margin:0 0 14px;padding:20px 0 14px 8px;line-height:1}
+a.logo .l1{font-style:italic;font-weight:400;font-size:1.45rem;text-transform:none;letter-spacing:0;color:var(--tortora);margin-bottom:2px}
+a.logo .l2{white-space:nowrap;font-weight:700;font-size:2.02rem;text-transform:none;letter-spacing:-.01em;line-height:1.02}
+a.logo .l3{font-weight:400;font-size:1.45rem;color:var(--tortora);margin-top:4px}
+.logo-home{display:none}
+@media(max-width:900px){
+ header .brand{display:none!important}
+ .logo-home{display:block;text-align:center;margin:10px 0 26px;line-height:1;color:var(--title)}
+ .logo-home span{display:block}
+ .logo-home .l1{font-style:italic;font-size:1.6rem;color:var(--tortora)}
+ .logo-home .l2{font-weight:700;font-size:2.3rem;line-height:1.02}
+ .logo-home .l2:nth-child(2){color:var(--rug)}
+ .logo-home .l3{font-size:1.6rem;color:var(--tortora);margin-top:4px}
+}
 
 .locale{color:inherit}
