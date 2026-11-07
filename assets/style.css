@@ -285,4 +285,46 @@ details.perlesame{margin:8px 0 16px;padding:8px 12px;border:1px solid var(--line
 details.perlesame>summary{cursor:pointer;font-weight:700;color:var(--esame)}details.perlesame>summary small,details.peg>summary small{font-weight:400;color:var(--mut)}
 details.peg{margin:6px 0 0 4px}details.peg>summary{cursor:pointer;font-weight:700;font-size:.92rem}details.peg ul{margin:4px 0 6px}
 
+/* ===== Layout «libro»: titoli nel margine sinistro, testo a destra (schermo largo e stampa) ===== */
+:root{--mg:12.5rem;--gp:2.2rem}
+@media(min-width:1150px){
+ .libro main{max-width:1140px;padding-left:calc(40px + var(--mg) + var(--gp))}
+ .libro main>h1,.libro main>details.toc,.libro main>.pdfl,.libro main>footer{margin-left:calc(-1*(var(--mg) + var(--gp)))}
+ .libro .sez{clear:left;margin-top:46px}.libro .sez3{clear:left;margin-top:28px}
+ .libro .sez>h2,.libro .sez3>h3{float:left;width:var(--mg);margin:0 0 0 calc(-1*(var(--mg) + var(--gp)));border:0}
+ .libro .sez>h2{padding-top:8px;border-top:3px solid var(--acc);font-size:1.1rem;line-height:1.3}
+ .libro .sez3>h3{padding-top:3px;font-size:.96rem;color:var(--mut);line-height:1.3}
+ .libro .sez>:nth-child(2),.libro .sez3>:nth-child(2){margin-top:0}
+ .libro main .tw.larga{margin-left:calc(-1*(var(--mg) + var(--gp)))}
+}
+/* stampa: stesse regole in millimetri; oggetti grandi su una pagina dedicata, verticale o orizzontale */
+@page{size:A4;margin:18mm 16mm 20mm 20mm;@bottom-right{content:counter(page);font:9pt var(--font);color:#555}@top-right{content:string(sezione);font:8.5pt var(--font);color:#555}@top-left{content:string(titolo);font:8.5pt var(--font);color:#555}}
+@page verticale{size:A4 portrait}
+@page orizzontale{size:A4 landscape}
+@media print{
+ .libro{--mgp:42mm;--gpp:7mm}
+ .libro html,html{font-size:10pt}
+ .libro main{max-width:none;padding:0 0 0 calc(var(--mgp) + var(--gpp))}
+ .libro main>h1{margin:0 0 4mm calc(-1*(var(--mgp) + var(--gpp)));font-size:20pt;string-set:titolo content(text)}
+ .libro main>p.sub,.libro main>p:first-of-type{max-width:none}
+ .libro p,.libro li{max-width:none}
+ .libro .sez{clear:left;margin-top:7mm}.libro .sez3{clear:left;margin-top:4mm}
+ .libro .sez>h2,.libro .sez3>h3{float:left;width:var(--mgp);margin:0 0 0 calc(-1*(var(--mgp) + var(--gpp)));border:0}
+ .libro .sez>h2{padding-top:2mm;border-top:1.2pt solid #17505f;font-size:11.5pt;string-set:sezione content(text)}
+ .libro .sez3>h3{font-size:10pt;color:#4f473c}
+ .libro .sez,.libro .sez3{break-inside:avoid-page}  /* il titolo nel margine resta con il suo primo blocco */
+ .libro .sez>:nth-child(2),.libro .sez3>:nth-child(2){margin-top:0}
+ .libro .tw.larga{margin-left:calc(-1*(var(--mgp) + var(--gpp)))}
+ .libro table{font-size:8.8pt}.libro tr,.libro li,.libro p{break-inside:avoid-page}
+ .libro .grande{break-before:page;break-after:page;margin-left:calc(-1*(var(--mgp) + var(--gpp)))}
+ .libro .grande.verticale{page:verticale}.libro .grande.orizzontale{page:orizzontale}
+ .libro .grande svg{max-height:245mm;width:auto;max-width:100%;margin:0 auto;display:block}
+ .libro div[style*="max-width:560px"]{max-width:118mm!important;margin:4mm 0!important;break-inside:avoid}
+ .libro details{border:0;padding:0;margin:4mm 0}.libro details>summary{display:block;list-style:none;font-weight:700;margin-bottom:2mm}
+ .libro details.perlesame{font-size:8.8pt}.libro details.perlesame li{margin-bottom:1mm}
+ .libro .hsw,.libro #mn{display:none}
+ .stampa-riquadro{margin:4mm 0;padding:2mm 0 0;border-top:.6pt solid #b9ae97}.stampa-titoletto{font-weight:700;margin:0 0 2mm}
+ .libro .stampa-riquadro.toc{display:none}
+}
+
 .locale{color:inherit}
