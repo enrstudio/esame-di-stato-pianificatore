@@ -262,5 +262,16 @@ a.chip.ok{background:#e6f1ea;border-color:#2e7d4f;color:#1d5a37;text-decoration:
 .chip.par{background:#f7efdc;border-color:#c9a24a;color:#5c4510}.chip.par small{color:#7a6230}
 .chip.no{background:transparent;border-color:#cfc8bb;color:var(--mut);border-style:dashed}
 .mleg .chip{margin-right:6px}
+/* Casi reali */
+details.casi{margin:10px 0 18px;padding:8px 12px;border:1px solid var(--line);border-left:4px solid #9a5f00;border-radius:4px;background:#fffdf8}
+details.casi>summary{cursor:pointer;font-weight:700;font-size:.92rem}details.casi>summary small{font-weight:400;color:var(--mut)}
+details.casi .ct{margin:10px 0 2px;font-weight:700;font-size:.88rem}details.casi ul{margin:0 0 4px}details.casi li{font-size:.88rem}
+.dc{color:var(--mut);font-style:italic}
+/* quattro sezioni */
+:root{--pit:#6a4fa0;--pgra:#1f6f99}
+.navsw{flex-wrap:wrap}.navsw a{flex:1 1 40%}
+.navsw a.sw-pit.on{background:var(--pit);color:#fff}.navsw a.sw-pgra.on{background:var(--pgra);color:#fff}
+.navsez.sez-pit h4{color:var(--pit)}.navsez.sez-pgra h4{color:var(--pgra)}
+.porta.sez-pit{border-top-color:var(--pit)}.porta.sez-pit b{color:var(--pit)}.porta.sez-pgra{border-top-color:var(--pgra)}.porta.sez-pgra b{color:var(--pgra)}
 
 .locale{color:inherit}
