@@ -250,5 +250,17 @@ details.navsez{margin-bottom:10px}details.navsez>summary{cursor:pointer;font-wei
 .porta b{font-size:1.35rem}.porta.sez-manuale b{color:var(--manuale)}.porta.sez-esame b{color:var(--esame)}
 .porta em{font-size:.88rem;color:var(--mut)}.porta:hover{background:var(--on)}
 ul.elenco{columns:2 16rem}ul.elenco li{break-inside:avoid}
+/* Mappa del Manuale */
+.mramo{margin:22px 0}.mramo h2 small{font-weight:400;color:var(--mut);font-size:.8em}
+.mbar{display:flex;height:8px;border-radius:4px;overflow:hidden;margin:4px 0 2px;background:var(--line)}.mbar .b{display:block}.mbar .ok{background:#2e7d4f}.mbar .par{background:#c9a24a}.mbar .no{background:#cfc8bb}
+.mcnt{font-size:.82rem;color:var(--mut);margin:0 0 8px}
+.mrow{display:grid;grid-template-columns:11rem 1fr;gap:6px 12px;padding:6px 0;border-top:1px solid var(--line)}
+@media (max-width:640px){.mrow{grid-template-columns:1fr}}
+.mg{font-size:.85rem;font-weight:700;color:var(--mut)}.mc{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-block;padding:3px 9px;border-radius:12px;font-size:.84rem;line-height:1.35;border:1px solid}
+a.chip.ok{background:#e6f1ea;border-color:#2e7d4f;color:#1d5a37;text-decoration:none}a.chip.ok:hover{background:#d3e8da}
+.chip.par{background:#f7efdc;border-color:#c9a24a;color:#5c4510}.chip.par small{color:#7a6230}
+.chip.no{background:transparent;border-color:#cfc8bb;color:var(--mut);border-style:dashed}
+.mleg .chip{margin-right:6px}
 
 .locale{color:inherit}
