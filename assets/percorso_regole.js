@@ -7,7 +7,7 @@
 
 /* ---------- testi usati ---------- */
 var TESTI={
- lr65:{nome:'LR 65',testo:'LR 65/2014, testo al 08/09/2025',pag:'lr65.html'},
+ lr65:{nome:'LR 65',testo:'LR 65/2014, testo con la LR 18/2026 (BURT 04/08/2026)',pag:'lr65.html'},
  lr10:{nome:'LR 10',testo:'LR 10/2010, testo al 20/09/2025',pag:'lr10.html'},
  lr30:{nome:'LR 30',testo:'LR 30/2015, testo al 04/09/2025'},
  lr41:{nome:'LR 41',testo:'LR 41/2018, testo al 12/08/2022'},
@@ -176,14 +176,14 @@ var ITER={
    {id:'approvazione',tag:['approvazione'],nome:'Approvazione nei Comuni',cosa:'Come per il piano intercomunale. Poi l’ente responsabile informa la Regione.',ruoli:r(['comuni'],['rdp'],[]),termini:[],fonti:[L('32 bis','cc. 2, 4'),L('23','c. 9')],esiti:[
      {se:'Nessuna osservazione',allora:'Efficace con l’avviso sul BURT che ne dà atto.',tipo:'prosegue',fonti:[L('32 bis','c. 3')]}]}
   ]},
- PROG:{nome:'Variante mediante approvazione del progetto',breve:'art. 34',osservazioni:'30 giorni dalla pubblicazione',efficacia:'Senza osservazioni: con l’avviso sul BURT che ne dà atto',fonti:[L('34')],
+ PROG:{nome:'Variante con il progetto dell’opera pubblica',breve:'DPR 327, art. 19',osservazioni:'30 giorni dall’avviso ai proprietari (DPR 327, art. 11)',efficacia:'Delibera del consiglio comunale dopo i 90 giorni senza dissenso della Regione',fonti:[F('dpr327','19'),F('dpr327','10')],
   fasi:[
-   {id:'avviso',tag:['adozione'],nome:'Avviso e atti',cosa:'L’amministrazione pubblica l’avviso sul BURT, mette gli atti in rete e informa Regione e Provincia o Città metropolitana.',ruoli:r(['amm'],[],[]),termini:[],fonti:[L('34','c. 1')]},
-   {id:'deposito',tag:['deposito'],nome:'Osservazioni',cosa:'Possono osservare gli interessati.',ruoli:r(['amm'],[],['interessati']),termini:[T('30 giorni','dalla pubblicazione',L('34','c. 1'))],fonti:[L('34','c. 1')]},
-   {id:'pronuncia',tag:['approvazione'],nome:'Pronuncia',cosa:'L’amministrazione si pronuncia sulle osservazioni e adegua gli atti se serve.',ruoli:r(['amm'],[],[]),termini:[],fonti:[L('34','c. 1')],esiti:[
-     {se:'Nessuna osservazione',allora:'Efficace con l’avviso sul BURT che ne dà atto.',tipo:'prosegue',fonti:[L('34','c. 1')]},
-     {se:'Ci sono osservazioni',allora:'Pronuncia e adeguamento degli atti.',tipo:'prosegue',fonti:[L('34','c. 1')]}]}
-  ],limiti:['Vale solo se una legge dice che quel progetto fa variante. Controlla qual è la legge.']},
+   {id:'avviso',tag:['avvio'],nome:'Avviso ai proprietari',cosa:'Ai proprietari delle aree si comunica l’avvio del procedimento almeno 20 giorni prima della delibera; possono osservare.',ruoli:r(['amm'],[],['interessati']),termini:[T('20 giorni','prima della delibera',F('dpr327','11','c. 1 lett. a')),T('30 giorni','per le osservazioni',F('dpr327','11','c. 2'))],fonti:[F('dpr327','11')]},
+   {id:'adozione',tag:['adozione'],nome:'Approvazione del progetto',cosa:'Il consiglio comunale approva il progetto: vale come adozione della variante. Se l’opera non è comunale, l’atto di approvazione va al consiglio, che può adottare la variante.',ruoli:r(['consiglio'],[],[]),termini:[],fonti:[F('dpr327','19','cc. 2-3')]},
+   {id:'regione',tag:['approvazione'],nome:'Regione',cosa:'La delibera e gli atti vanno alla Regione, o all’ente delegato ad approvare il piano comunale.',ruoli:r(['regione'],[],[]),termini:[T('90 giorni','dalla ricezione della delibera completa',F('dpr327','19','c. 4'))],fonti:[F('dpr327','19','c. 4')],esiti:[
+     {se:'Nessun dissenso entro 90 giorni',allora:'La determinazione è approvata; il consiglio ne dispone l’efficacia in una seduta successiva.',tipo:'prosegue',fonti:[F('dpr327','19','c. 4')]},
+     {se:'Dissenso della Regione',allora:'La variante non è approvata con questa strada.',tipo:'ferma',fonti:[F('dpr327','19','c. 4')]}]}
+  ],limiti:['Dal 2026 la LR 65 non ha più una procedura propria: l’art. 34 è abrogato dalla LR 18/2026 (art. 74). Si applica la legge statale: DPR 327/2001, artt. 10 e 19, o la legge di settore dell’opera.','Il rapporto con la conferenza di copianificazione è da verificare.']},
  SUAP:{nome:'Variante mediante sportello unico',breve:'art. 35',osservazioni:'30 giorni dall’avviso sul BURT',efficacia:'La legge indica trasmissione e avviso sul BURT, senza altro termine',fonti:[L('35')],
   fasi:[
    {id:'progetto',tag:['istruttoria'],nome:'Progetto con proposta di variante',cosa:'Il progetto dell’art. 8 del DPR 160/2010 contiene gli elaborati urbanistici della variante.',ruoli:r(['proponente'],[],[]),termini:[],fonti:[L('35','c. 1')]},
@@ -334,7 +334,7 @@ var REGOLE=[
  {id:'I-PO',gruppo:'iter',se:{azione:['po']},iter:'ORD',tipo:'Piano operativo o variante generale',perche:'Il piano operativo e le varianti diverse da quelle degli artt. 30, 31 c. 3, 34 e 35 seguono il procedimento ordinario.',stato:RIS,fonti:[L('16','c. 1 lett. e'),L('96','c. 3')]},
  {id:'I-RIG-PIANO',gruppo:'iter',se:{funzione:['rig'],dove:['dentro'],conformita:['po']},iter:'RIG',perche:'L’intervento è individuato dal piano operativo: si presenta un piano di intervento.',stato:RIS,fonti:[L('125','c. 1'),L('126')]},
  {id:'I-RIG-RICOG',gruppo:'iter',se:{funzione:['rig'],dove:['dentro'],conformita:VAR},iter:'SEMPL',tipo:'Atto di ricognizione della rigenerazione',perche:'Il piano non individua l’area: il Comune può farlo con un atto di ricognizione, che segue il procedimento dell’art. 32. Poi serve il piano di intervento dell’art. 126.',stato:RIS,fonti:[L('125','c. 2'),L('126','c. 1')]},
- {id:'I-PROG',gruppo:'iter',se:{chi:['amm']},iter:'PROG',tipo:'Variante con il progetto dell’opera',perche:'L’approvazione del progetto fa variante, nei casi previsti dalla legge.',stato:RIS,fonti:[L('34','c. 1')]},
+ {id:'I-PROG',gruppo:'iter',se:{chi:['amm']},iter:'PROG',tipo:'Variante con il progetto dell’opera',perche:'L’approvazione del progetto in consiglio comunale vale come adozione della variante.',stato:RIS,fonti:[F('dpr327','19','c. 2')]},
  {id:'I-SUAP',gruppo:'iter',se:{chi:['suap']},iter:'SUAP',tipo:'Variante con il progetto allo sportello unico',perche:'Il progetto presentato allo sportello unico porta con sé la proposta di variante.',stato:RIS,fonti:[L('35','c. 1')]},
  {id:'I-PAP',gruppo:'iter',se:{funzione:['agr'],conformita:['po'],attuazione:['pap']},iter:'PAP',perche:'I nuovi edifici rurali passano dal programma aziendale.',stato:RIS,fonti:[L('73','cc. 2, 4'),L('74','c. 2')]},
  {id:'I-PAP-PA',gruppo:'iter',se:{funzione:['agr'],conformita:['po'],attuazione:['papa']},iter:'PAP_PA',perche:'Il piano comunale dà al programma valore di piano attuativo: si applica l’art. 111.',stato:RIS,fonti:[L('74','cc. 4, 13')]},
@@ -352,7 +352,7 @@ var REGOLE=[
  {id:'I-PO-SEMPL',gruppo:'iter',se:{conformita:['varpo'],dove:['dentro']},iter:'SEMPL',tipo:'Variante semplificata al piano operativo',perche:'La previsione è interna al perimetro del territorio urbanizzato.',stato:RIS,fonti:[L('30','c. 2')]},
  {id:'I-ORD-FUORI',gruppo:'iter',se:{conformita:VAR,dove:['fuori_suolo','fuori_esist']},iter:'ORD',tipo:'Variante ordinaria',perche:'La previsione è fuori dal perimetro: la variante al piano operativo non può essere semplificata.',stato:RIS,fonti:[L('30','c. 2'),L('16','c. 1 lett. e')]},
  /* copianificazione */
- {id:'C-NONRES',gruppo:'modulo',modulo:'COPIAN',se:{funzione:['nonres','pubutil'],dove:['fuori_suolo']},tranne:{conformita:['po']},perche:'Trasformazione non residenziale su suolo non edificato fuori dal perimetro.',stato:RIS,fonti:[L('25','c. 1'),L('4','c. 7'),L('34','c. 1 bis'),L('35','c. 1')]},
+ {id:'C-NONRES',gruppo:'modulo',modulo:'COPIAN',se:{funzione:['nonres','pubutil'],dove:['fuori_suolo']},tranne:{conformita:['po']},perche:'Trasformazione non residenziale su suolo non edificato fuori dal perimetro.',stato:RIS,fonti:[L('25','c. 1'),L('4','c. 7'),L('35','c. 1')]},
  {id:'C-GRANDE-FUORI',gruppo:'modulo',modulo:'COPIAN',se:{funzione:['grande'],dove:['fuori_suolo']},tranne:{conformita:['po']},perche:'Grande struttura di vendita fuori dal perimetro, su suolo non edificato.',stato:RIS,fonti:[L('26','c. 1 lett. a')]},
  {id:'C-GRANDE-TU',gruppo:'modulo',modulo:'COPIAN',se:{funzione:['grande'],dove:['dentro']},tranne:{conformita:['po']},perche:'Grande struttura di vendita dentro il perimetro, anche se riusa edifici esistenti.',stato:RIS,fonti:[L('26','cc. 1 lett. b, 3')]},
  {id:'C-MEDIA',gruppo:'modulo',modulo:'COPIAN',condizionato:'Dipende da superficie di vendita e abitanti, che non chiedo. Conferenza da 2.000 mq, o da 1.000 mq nei Comuni diversi da quelli indicati dalla LR 28/2005. Nessuna conferenza nei Comuni da 50 mila abitanti in su. Sotto soglia, l’art. 27 tace e gli artt. 4 c. 7 e 25 c. 1 restano generali: controlla il rapporto fra le norme.',se:{funzione:['media'],dove:['fuori_suolo']},tranne:{conformita:['po']},perche:'Media struttura di vendita fuori dal perimetro, su suolo non edificato. Le soglie sono riscontrate sull’art. 27. Le classi dei Comuni stanno nella LR 28/2005, che non è in cartella; il regolamento in cartella (DPGR 23/R/2020) attua il nuovo Codice del commercio, LR 62/2018: il rinvio va letto sul testo vigente.',stato:DAR,fonti:[L('27'),F('fuori','15','LR 28/2005, c. 1 lett. e')]},
@@ -360,7 +360,7 @@ var REGOLE=[
  {id:'C-PO',gruppo:'modulo',modulo:'COPIAN',condizionato:'Solo per le previsioni del piano su suolo non edificato fuori dal perimetro, salvo le esenzioni dell’art. 25 c. 2.',se:{azione:['po']},perche:'Il piano operativo può contenere previsioni fuori dal perimetro.',stato:RIS,fonti:[L('25','cc. 1-2, 3 bis')]},
  {id:'E-SIC',gruppo:'nota',se:{funzione:['sic'],dove:['fuori_suolo']},tranne:{conformita:['po']},nota:'Niente copianificazione: sicurezza, pronto soccorso sanitario, difesa idraulica o idrogeologica.',stato:RIS,fonti:[L('25','c. 2 lett. b')]},
  {id:'E-AMP',gruppo:'nota',se:{funzione:['amp'],dove:['fuori_suolo']},tranne:{conformita:['po']},nota:'Niente copianificazione, se l’ampliamento serve a mantenere le funzioni produttive.',stato:RIS,fonti:[L('25','c. 2 lett. c')]},
- {id:'E-OP',gruppo:'nota',se:{funzione:['op'],dove:['fuori_suolo']},tranne:{conformita:['po']},nota:'Niente copianificazione: opera pubblica, o ampliamento di una esistente.',stato:RIS,fonti:[L('25','c. 2 lett. d'),L('34','c. 1 bis')]},
+ {id:'E-OP',gruppo:'nota',se:{funzione:['op'],dove:['fuori_suolo']},tranne:{conformita:['po']},nota:'Niente copianificazione: opera pubblica, o ampliamento di una esistente.',stato:RIS,fonti:[L('25','c. 2 lett. d')]},
  {id:'E-AGR',gruppo:'nota',se:{funzione:['agr'],dove:['fuori_suolo']},nota:'Niente copianificazione: interventi previsti da un programma aziendale.',stato:RIS,fonti:[L('25','c. 2 lett. e ter')]},
  {id:'E-RIC',gruppo:'nota',se:{funzione:['ric'],dove:['fuori_suolo']},tranne:{conformita:['po']},nota:'Niente copianificazione: nuova edificazione di volumi demoliti, senza cambio d’uso.',stato:RIS,fonti:[L('25','c. 2 lett. e quater')]},
  {id:'N-PS-COPIAN',gruppo:'nota',se:{azione:['ps','psi']},nota:'Il piano strutturale non contiene previsioni localizzative. La copianificazione riguarda le previsioni del piano operativo.',stato:RIS,fonti:[L('92','c. 7'),L('25','c. 1')]},
@@ -529,7 +529,7 @@ function frase(f,ris){
  if(f.dove==='fuori_suolo'&&f.funzione!=='agr')s+=', dopo aver escluso alternative di riuso (LR 65, art. 4 c. 8)';
  if(f.funzione==='agr')s+=', con programma aziendale e dando priorità al recupero (LR 65, artt. 73-74)';
  if(ris.moduli.some(function(m){return m.id==='COPIAN'&&!m.condizionato}))s+=', con parere della conferenza di copianificazione (art. 25)';
- var I={SEMPL:', con variante semplificata (artt. 30 e 32)',SEMPL_PSI:', con variante semplificata al piano intercomunale (artt. 30 e 32 bis)',ORD:', con variante ordinaria (artt. 17 e 19)',PSI:', con variante al piano intercomunale (art. 23)',PROG:', con variante mediante approvazione del progetto (art. 34)',SUAP:', con variante mediante sportello unico (art. 35)',PA:', in attuazione del piano operativo vigente, con piano attuativo (art. 111)',PUC:', in attuazione del piano operativo vigente, con progetto unitario convenzionato (art. 121)',PAP:'',PAP_PA:', con programma aziendale con valore di piano attuativo (artt. 74 c. 13 e 111)',RIG:', con piano di intervento (artt. 125-126)'}[ris.iter];
+ var I={SEMPL:', con variante semplificata (artt. 30 e 32)',SEMPL_PSI:', con variante semplificata al piano intercomunale (artt. 30 e 32 bis)',ORD:', con variante ordinaria (artt. 17 e 19)',PSI:', con variante al piano intercomunale (art. 23)',PROG:', con variante tramite il progetto dell’opera (DPR 327, art. 19)',SUAP:', con variante mediante sportello unico (art. 35)',PA:', in attuazione del piano operativo vigente, con piano attuativo (art. 111)',PUC:', in attuazione del piano operativo vigente, con progetto unitario convenzionato (art. 121)',PAP:'',PAP_PA:', con programma aziendale con valore di piano attuativo (artt. 74 c. 13 e 111)',RIG:', con piano di intervento (artt. 125-126)'}[ris.iter];
  return s+I+'.';
 }
 function valuta(grezzi){
