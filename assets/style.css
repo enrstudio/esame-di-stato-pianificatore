@@ -528,5 +528,20 @@ summary::before{content:"\203A";display:inline-block;width:.9em;margin-right:.2e
 details[open]>summary::before{transform:rotate(90deg)}
 .libro details.margine>summary::before{content:none}
 @media print{summary::before{content:none}}
+/* Mappa del Manuale (08/11): colori del tema; lo stato si legge anche dal bordo (pieno, tratteggio, puntini) */
+.mramo{margin:30px 0 26px}
+.mramo h2{font-size:1.15rem;margin:0 0 6px;border:0}
+.mbar{height:6px;background:var(--line)}.mbar .ok{background:var(--acc)}.mbar .par{background:#8a5c2e}.mbar .no{background:var(--line)}
+.mrow{grid-template-columns:9.5rem minmax(0,1fr);gap:4px 14px;padding:8px 0;align-items:start}
+.mg{padding-top:3px;line-height:1.3}
+.mc{display:flex!important;flex-wrap:wrap;gap:6px;align-items:flex-start}
+.mc>.chip,.mleg .chip{display:inline-block!important;margin:0;width:auto}
+.chip{font-size:.84rem;line-height:1.3;padding:3px 8px;border-width:1px}
+a.chip.ok,a.chip.ok:visited{background:var(--panel);border:1.5px solid var(--acc);color:var(--fg);text-decoration:none;font-weight:600}
+a.chip.ok:hover{background:var(--on)}
+.chip.par{background:transparent;border:1.5px dashed #8a5c2e;color:var(--fg)}.chip.par small{color:var(--mut)}
+.chip.no{background:transparent;border:1.5px dotted var(--line2);color:var(--mut)}
+@media(max-width:640px){.mrow{grid-template-columns:1fr}}
+.mbar .b{margin:0;padding:0;border:0;max-width:none;min-width:0}
 
 .locale{color:inherit}
