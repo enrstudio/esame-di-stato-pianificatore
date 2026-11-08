@@ -514,5 +514,19 @@ figure.prefazione blockquote{margin:0;padding:0;border:0;background:none}
 figure.prefazione blockquote p{font-size:1.35rem;line-height:1.35;font-style:italic;color:var(--title);margin:0}
 figure.prefazione figcaption{margin-top:.5rem;font-size:.88rem;color:var(--mut)}
 figure.prefazione figcaption::before{content:'— '}
+/* Titoli di sezione nel margine come float (non in assoluto): le note che seguono si mettono sotto il titolo
+   invece di sovrapporsi; la sezione contiene il suo titolo (flow-root) e la riga resta allineata (08/11) */
+@media(min-width:1150px){
+ .libro .sez,.libro .sez3{display:flow-root}
+ .libro .sez>h2,.libro .sez3>h3{position:static;float:left;clear:left;width:var(--mg);margin:16px 0 8px calc(-1 * (var(--mg) + var(--gp)))}
+ .libro .sez3>h3{margin-top:0}
+}
+
+/* Freccette delle tendine: sottili e piccole al posto del triangolo del browser (08/11) */
+summary{list-style:none}summary::-webkit-details-marker{display:none}
+summary::before{content:"\203A";display:inline-block;width:.9em;margin-right:.2em;font-weight:400;font-size:.95em;color:var(--mut);transition:transform .15s}
+details[open]>summary::before{transform:rotate(90deg)}
+.libro details.margine>summary::before{content:none}
+@media print{summary::before{content:none}}
 
 .locale{color:inherit}
