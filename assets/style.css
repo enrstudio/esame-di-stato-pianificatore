@@ -508,4 +508,20 @@ figure.foto figcaption{margin-top:8px;font-size:.86rem;color:var(--mut);line-hei
 
 nav li.navl{font-size:.74rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--mut);padding:10px 8px 2px}
 
+/* 規 (regola) in trasparenza sotto il titolo */
+a.logo,.logo-home{isolation:isolate}
+.logo-home{position:relative}
+a.logo span,.logo-home span{position:relative;z-index:1}
+a.logo::before,.logo-home::before{content:'規' / '';position:absolute;z-index:0;left:50%;top:50%;transform:translate(-50%,-50%);font-family:'Noto Serif CJK TC','Noto Sans CJK TC','PingFang TC','Microsoft JhengHei',serif;font-size:7rem;line-height:1;color:var(--rug);opacity:.09;pointer-events:none}
+.logo-home::before{font-size:12rem}
+@media print{a.logo::before,.logo-home::before{display:none}}
+/* prefazione in home */
+figure.prefazione{margin:2rem 0 2.4rem;padding:0;border:0}
+figure.prefazione blockquote{margin:0;padding:0;border:0;background:none}
+figure.prefazione blockquote p{font-size:1.35rem;line-height:1.35;font-style:italic;color:var(--title);margin:0}
+figure.prefazione .zh{margin:.7rem 0 0;color:var(--mut);font-size:1rem;line-height:1.5}
+figure.prefazione .zh span{display:block;font-size:.88rem;font-style:italic}
+figure.prefazione figcaption{margin-top:.5rem;font-size:.88rem;color:var(--mut)}
+figure.prefazione figcaption::before{content:'— '}
+
 .locale{color:inherit}
