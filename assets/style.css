@@ -506,4 +506,6 @@ figure.foto{margin:16px 0 22px}figure.foto img{display:block;width:100%;height:a
 figure.foto figcaption{margin-top:8px;font-size:.86rem;color:var(--mut);line-height:1.45;max-width:none}
 @media print{figure.foto{break-inside:avoid}figure.foto img{max-height:150mm;width:auto;max-width:100%}}
 
+nav li.navl{font-size:.74rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--mut);padding:10px 8px 2px}
+
 .locale{color:inherit}
