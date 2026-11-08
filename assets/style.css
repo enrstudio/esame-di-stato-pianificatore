@@ -28,7 +28,7 @@ h1,h2,h3,h4,h5{color:var(--title);font-weight:700;line-height:1.28}
 h1{font-size:1.75rem;margin:0 0 14px}h2{font-size:1.32rem;margin:42px 0 10px;padding-bottom:5px;border-bottom:2px solid var(--line)}h3{font-size:1.1rem;margin:30px 0 8px}h4{font-size:1rem;margin:22px 0 6px}h5{font-size:1rem;margin:16px 0 6px}
 h2 small,h3 small{font-weight:400;color:var(--mut);font-size:.8em}
 p,li{max-width:34rem}p{margin:0 0 14px}ul,ol{padding-left:1.4em;margin:0 0 14px}li{margin-bottom:6px}
-.sub,.note{color:var(--mut)}main>p>em:only-child{font-style:normal;color:var(--mut);font-size:.9rem;display:block;line-height:1.5}
+.sub,.note{color:var(--mut)}main p.solo-em>em{font-style:normal;color:var(--mut);font-size:.9rem;display:block;line-height:1.5}
 .pdfl{text-align:right;margin:0 0 8px;font-size:.88rem;max-width:none}
 strong,b{font-weight:700}code{font-family:"Liberation Mono","DejaVu Sans Mono",monospace;font-size:.82em;background:var(--on);padding:1px 4px;border-radius:0}
 .tw{overflow-x:auto;margin:12px 0 20px}
@@ -517,7 +517,7 @@ figure.prefazione figcaption::before{content:'— '}
 /* Titoli di sezione nel margine come float (non in assoluto): le note che seguono si mettono sotto il titolo
    invece di sovrapporsi; la sezione contiene il suo titolo (flow-root) e la riga resta allineata (08/11) */
 @media(min-width:1150px){
- .libro .sez,.libro .sez3{display:flow-root}
+ .libro .sez,.libro .sez3{display:block}  /* niente flow-root: il titolo può scendere oltre il primo blocco senza lasciare vuoti */
  .libro .sez>h2,.libro .sez3>h3{position:static;float:left;clear:left;width:var(--mg);margin:16px 0 8px calc(-1 * (var(--mg) + var(--gp)))}
  .libro .sez3>h3{margin-top:0}
 }
