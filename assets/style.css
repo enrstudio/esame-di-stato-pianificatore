@@ -501,5 +501,9 @@ a.logo .l2{font-size:calc(var(--nw) * .118)}
 }
 /* I grafici occupano sempre tutta la larghezza della colonna del testo (non più 560 px centrati) */
 @media screen{.libro main div[style*="max-width:560px"]:not(.graf-tel){max-width:none!important;margin-left:0!important;margin-right:0!important}}
+/* Immagini reali nel testo: tutta la colonna, didascalia con la fonte */
+figure.foto{margin:16px 0 22px}figure.foto img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+figure.foto figcaption{margin-top:8px;font-size:.86rem;color:var(--mut);line-height:1.45;max-width:none}
+@media print{figure.foto{break-inside:avoid}figure.foto img{max-height:150mm;width:auto;max-width:100%}}
 
 .locale{color:inherit}
